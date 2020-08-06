@@ -1,0 +1,17 @@
+<h1>Buscador <small>{{ value }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con la búsqueda: {{value}}
+        </div>
+    </div>
+
+</div>
+
+<div class="card-columns">
+    <app-heroe-tarjeta [heroe]="heroe" *ngFor="let heroe of heroes; let i = index" [index]="heroe.id">
+
+    </app-heroe-tarjeta>
+</div>
